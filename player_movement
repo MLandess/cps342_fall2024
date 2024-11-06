@@ -1,0 +1,29 @@
+
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class player_movement : MonoBehaviour
+{
+    // Variable to control movement speed
+    public float speed = 20;
+
+    // Store the player's movement input
+    private Vector2 motion;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        // Initialize variables if needed
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        // Get horizontal and vertical input (e.g., arrow keys, WASD)
+        motion = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+
+        // Move the player by translating the object
+        transform.Translate(motion * speed * Time.deltaTime);
+    }
+}
